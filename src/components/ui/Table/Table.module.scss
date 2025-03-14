@@ -1,0 +1,31 @@
+.tableWrapper {
+	overflow-x: auto;
+}
+
+.table {
+	width: 100%;
+	font-size: 1rem;
+	border-collapse: collapse;
+}
+
+.thead {
+	background-color: #f3f4f6;
+}
+
+.th {
+	padding: 1rem 1rem;
+	text-align: center;
+	font-weight: 500;
+	color: #374151;
+}
+
+.tbody {
+	border-bottom: 1.5px solid #e5e7eb;
+}
+
+.td {
+	padding: 1rem 1rem;
+	color: #1f2937;
+	border-top: 1.5px solid #f3f4f6;
+	text-align: center;
+}

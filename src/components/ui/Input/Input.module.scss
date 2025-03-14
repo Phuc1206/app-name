@@ -1,0 +1,80 @@
+.inputContainer {
+	width: 100%;
+}
+
+.inputLabel {
+	font-weight: 500;
+	color: #a8a3ad;
+}
+
+.inputWrapper {
+	position: relative;
+}
+
+.inputField {
+	background-color: #e6e0e9;
+	color: #888888;
+	width: 100%;
+	padding: 1rem 1rem;
+	border-radius: 20px;
+	transition: all 0.2s ease;
+	outline: none;
+
+	&.default {
+		border: 1px solid #e2e8f0; // gray-300
+		&:focus {
+			border-color: #3182ce;
+		}
+	}
+
+	&.error {
+		border: 1px solid #f56565; // red-500
+		&:focus {
+			border-color: #f56565;
+		}
+	}
+
+	&.withIconLeft {
+		padding-left: 3rem;
+	}
+
+	&.withIconRight {
+		padding-right: 3rem;
+	}
+}
+
+.iconLeft,
+.iconRight {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #888888;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.iconLeft {
+	left: 0.5rem;
+}
+
+.iconRight {
+	right: 0.5rem;
+}
+
+.iconLeftWithDivider {
+	border-right: 1px solid #888888;
+	padding-right: 0.7rem;
+}
+.errorText {
+	margin-top: 0.25rem;
+	font-size: 0.875rem;
+	color: #f56565;
+}
+
+.helperText {
+	margin-top: 0.25rem;
+	font-size: 0.875rem;
+	color: #6b7280;
+}

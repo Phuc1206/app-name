@@ -1,0 +1,147 @@
+.container {
+	background-color: #ececec;
+	border-radius: 12px;
+}
+.card {
+	width: 100%;
+	height: 72px;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+
+.checkbox {
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	input {
+		width: 18px;
+		height: 18px;
+		border: 2px solid #49454f;
+		border-radius: 2px;
+	}
+}
+
+.avatar {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 0;
+}
+
+.avatarWrapper {
+	width: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.info {
+	flex: 1;
+	display: flex;
+}
+
+.nameWrapper {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.roleWrapper {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+.statusWrapper {
+	width: 160px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.name {
+	font-weight: 600;
+	font-size: 15px;
+	color: #000;
+}
+
+.role {
+	font-size: 14px;
+	color: #666;
+}
+
+.status {
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	gap: 6px;
+}
+
+.statusDot {
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	border-radius: 50%;
+	transform: translateY(-3px);
+}
+
+.statusText {
+	font-size: 14px;
+	color: green;
+}
+.active {
+	background-color: green;
+}
+
+.inactive {
+	background-color: #888;
+}
+.options {
+	width: 100%;
+	border-radius: 8px;
+	.actions {
+		display: flex;
+		flex-wrap: nowrap;
+		margin-bottom: 5px;
+		font-size: 14px;
+		gap: 15px;
+	}
+	.actionRow {
+		display: flex;
+	}
+	.rightAlign {
+		justify-content: flex-end;
+	}
+	.btnAction {
+		font-size: 14px;
+		font-weight: 500;
+	}
+	.danger {
+		color: red;
+	}
+}
+.confirmBox {
+	padding: 12px 20px;
+	background-color: #ececec;
+	border-top: 2px solid #dcdcdc;
+	border-radius: 8px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	.btnDanger {
+		background-color: red;
+	}
+}
+
+.confirmText {
+	font-weight: 500;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+.confirmActions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 12px;
+}

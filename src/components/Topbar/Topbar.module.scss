@@ -1,0 +1,56 @@
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1rem;
+	background-color: var(--white);
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.searchWrapper {
+	max-width: 550px;
+	width: 500px;
+}
+
+.rightSection {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.userInfo {
+	text-align: right;
+}
+
+.username {
+	font-weight: 600;
+	font-size: 0.875rem;
+}
+
+.role {
+	font-size: 0.75rem;
+	color: #48bb78;
+}
+
+.iconButton {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background-color: #ffffff;
+	display: flex;
+	border: 1px solid #d4d4d4;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	position: relative;
+}
+
+.notificationDot {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 8px;
+	height: 8px;
+	background-color: red;
+	border-radius: 50%;
+}

@@ -1,0 +1,71 @@
+.roleList {
+	background: #d3dbd3;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	padding: 1rem;
+	min-width: 240px;
+	height: 600px;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+}
+
+.item {
+	padding: 0.5rem 0.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border-radius: 6px;
+	border: 1px solid #e5e7eb;
+	color: #374151;
+	font-size: 1rem;
+	font-weight: 400;
+	position: relative;
+}
+.btn {
+	margin-bottom: 0.5rem;
+}
+.dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	margin-right: 0.5rem;
+	flex-shrink: 0;
+}
+
+.greenDot {
+	background-color: #22c55e;
+}
+
+.grayDot {
+	background-color: #6b7280;
+}
+
+.name {
+	flex: 1;
+	margin-left: 0.5rem;
+	font-size: 0.95rem;
+	font-weight: 500;
+	color: #333;
+}
+
+.removeBtn {
+	background: none;
+	border: none;
+	color: #6b7280;
+	font-size: 1.1rem;
+	cursor: pointer;
+	padding: 0 0.25rem;
+
+	&:hover {
+		color: #ef4444;
+	}
+}
