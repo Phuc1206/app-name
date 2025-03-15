@@ -8,10 +8,6 @@ import {
 	Plus,
 	Pencil,
 	Trash2,
-	ChevronsLeft,
-	ChevronLeft,
-	ChevronRight,
-	ChevronsRight,
 	GalleryHorizontal,
 	ArrowDownAZ,
 	ArrowUpAZ,
@@ -23,14 +19,14 @@ import ModalCenter from '../../Modal/ModalCenter';
 import Select from '../../ui/Select/Select';
 import { Department } from '../../../utils/type';
 import EmployeeCard from '../../Card/EmployeeCard';
-import { useOrg } from '../../store';
-import clsx from 'clsx';
+import { useOrg } from '../../../store';
+import Pagination from '../../Pagination/Pagination';
 const rowOptions = [
 	{ value: '10', label: 'số dòng hiển thị: 10' },
 	{ value: '20', label: 'số dòng hiển thị: 20' },
 	{ value: '50', label: 'số dòng hiển thị: 50' },
 ];
-
+let id = 3;
 const DepartmentManager = () => {
 	const {
 		modalType,
@@ -129,7 +125,7 @@ const DepartmentManager = () => {
 		}
 
 		addDepartment({
-			id: Date.now(),
+			id: ++id,
 			name: departmentName,
 			code: departmentCode,
 		});
@@ -272,49 +268,14 @@ const DepartmentManager = () => {
 								</div>
 							</div>
 
-							<div className={styles.pagination}>
-								<ChevronsLeft
-									size={18}
-									className={clsx(
-										styles.pageIcon,
-										currentPage === 1 && styles.disabled
-									)}
-									onClick={currentPage === 1 ? undefined : goToFirstPage}
-								/>
-								<ChevronLeft
-									size={18}
-									className={clsx(
-										styles.pageIcon,
-										currentPage === 1 && styles.disabled
-									)}
-									onClick={currentPage === 1 ? undefined : goToPrevPage}
-								/>
-
-								<span className={styles.pageText}>
-									{currentPage}/{totalPages}
-								</span>
-
-								<ChevronRight
-									size={18}
-									className={clsx(
-										styles.pageIcon,
-										currentPage === totalPages && styles.disabled
-									)}
-									onClick={
-										currentPage === totalPages ? undefined : goToNextPage
-									}
-								/>
-								<ChevronsRight
-									size={18}
-									className={clsx(
-										styles.pageIcon,
-										currentPage === totalPages && styles.disabled
-									)}
-									onClick={
-										currentPage === totalPages ? undefined : goToLastPage
-									}
-								/>
-							</div>
+							<Pagination
+								currentPage={currentPage}
+								totalPages={totalPages}
+								onFirst={goToFirstPage}
+								onPrev={goToPrevPage}
+								onNext={goToNextPage}
+								onLast={goToLastPage}
+							/>
 						</div>
 					</div>
 					<div className={styles.right}>

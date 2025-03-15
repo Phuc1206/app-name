@@ -1,6 +1,6 @@
 import { OrgState, OrgAction } from './OrgTypes';
-import { mockEmployeeList, mockRoles } from '../../utils/data';
-import { mockDepartments } from '../../utils/data';
+import { mockEmployeeList, mockRoles } from '../utils/data';
+import { mockDepartments } from '../utils/data';
 export const initialOrgState: OrgState = {
 	modalType: null,
 	roles: mockRoles,

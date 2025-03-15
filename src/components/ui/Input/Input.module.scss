@@ -21,14 +21,14 @@
 	outline: none;
 
 	&.default {
-		border: 1px solid #e2e8f0; // gray-300
+		border: 1px solid #e2e8f0;
 		&:focus {
 			border-color: #3182ce;
 		}
 	}
 
 	&.error {
-		border: 1px solid #f56565; // red-500
+		border: 1px solid #f56565;
 		&:focus {
 			border-color: #f56565;
 		}

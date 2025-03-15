@@ -2,7 +2,7 @@ import Button from '../ui/Button/Button';
 import styles from './RoleList.module.scss';
 import { X } from 'lucide-react';
 import clsx from 'clsx';
-import { useOrg } from '../store';
+import { useOrg } from '../../store';
 
 const RoleList = () => {
 	const { openModal, roles, removeRole } = useOrg();

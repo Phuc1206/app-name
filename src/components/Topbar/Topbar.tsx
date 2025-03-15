@@ -20,16 +20,16 @@ function Topbar() {
 					</div>
 
 					<div className={styles.iconButton}>
-						<User />
+						<User style={{ color: 'gray' }} />
 					</div>
 
 					<div className={styles.iconButton}>
-						<Bell />
-						<span className={styles.notificationDot}></span>
+						<Bell size={16} style={{ color: 'gray' }} />
+						<span className={styles.notificationDot}>3</span>
 					</div>
 
 					<div className={styles.iconButton}>
-						<LogOut />
+						<LogOut style={{ color: 'red' }} />
 					</div>
 				</div>
 			</div>

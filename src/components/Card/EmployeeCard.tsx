@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Button from '../ui/Button/Button';
 import { MoveRight, RefreshCcw, LogOut } from 'lucide-react';
 import clsx from 'clsx';
-import { useOrg } from '../store';
+import { useOrg } from '../../store';
 import ChangeFieldForm from '../ChangeFieldForm/ChangeFieldForm';
 import { Units } from '../../utils/data';
 interface EmployeeCardProps {
@@ -102,8 +102,9 @@ const EmployeeCard = ({ employee }: EmployeeCardProps) => {
 						<div className={styles.actionRow}>
 							<Button
 								variant='text'
+								size='sm'
 								className={clsx(styles.danger, styles.btnAction)}
-								iconLeft={<MoveRight size={14} />}
+								iconLeft={<MoveRight size={13} />}
 								onClick={() => {
 									setChangeField('department');
 									setIsConfirmingRemove(false);
@@ -112,9 +113,10 @@ const EmployeeCard = ({ employee }: EmployeeCardProps) => {
 								Đổi phòng ban
 							</Button>
 							<Button
+								size='sm'
 								variant='text'
 								className={styles.btnAction}
-								iconLeft={<RefreshCcw size={14} />}
+								iconLeft={<RefreshCcw size={13} />}
 								onClick={() => {
 									setChangeField('role');
 									setIsConfirmingRemove(false);
@@ -123,9 +125,10 @@ const EmployeeCard = ({ employee }: EmployeeCardProps) => {
 								Đổi chức vụ
 							</Button>
 							<Button
+								size='sm'
 								variant='text'
 								className={styles.btnAction}
-								iconLeft={<RefreshCcw size={14} />}
+								iconLeft={<RefreshCcw size={13} />}
 								onClick={() => {
 									setIsConfirmingRemove(false);
 									setChangeField('unit');
@@ -138,7 +141,7 @@ const EmployeeCard = ({ employee }: EmployeeCardProps) => {
 							<Button
 								variant='text'
 								className={clsx(styles.danger, styles.btnAction)}
-								iconLeft={<LogOut size={14} />}
+								iconLeft={<LogOut size={13} />}
 								onClick={() => {
 									setIsConfirmingRemove(true);
 									setChangeField(null);
