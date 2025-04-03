@@ -9,7 +9,7 @@ export const mockDepartments = [
 	{ id: 1, name: 'Phòng kinh doanh', code: '1abc' },
 	{ id: 2, name: 'Phòng công nghệ', code: '2avc' },
 	{ id: 3, name: 'Phòng sản xuất', code: '3adv' },
-	// { id: 4, name: 'Phòng tài chính', code: '4bcv' },
+	{ id: 4, name: 'Phòng tài chính', code: '4bcv' },
 	// { id: 4, name: 'Phòng tài chính', code: '4bcv' },
 	// { id: 4, name: 'Phòng tài chính', code: '4bcv' },
 	// { id: 4, name: 'Phòng tài chính', code: '4bcv' },

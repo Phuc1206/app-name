@@ -11,7 +11,6 @@ interface TableProps<T> {
 	columns: Column<T>[];
 	data: T[];
 	className?: string;
-	striped?: boolean;
 }
 
 const Table = <T,>({ columns, data, className = '' }: TableProps<T>) => {

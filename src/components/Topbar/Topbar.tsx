@@ -1,7 +1,13 @@
 import Input from '../ui/Input/Input';
 import styles from './Topbar.module.scss';
 import { Search, Menu, User, Bell, LogOut } from 'lucide-react';
-function Topbar() {
+function Topbar({
+	searchCode,
+	setSearchCode,
+}: {
+	searchCode: string;
+	setSearchCode: (value: string) => void;
+}) {
 	return (
 		<>
 			<div className={styles.topbar}>
@@ -10,6 +16,8 @@ function Topbar() {
 						placeholder='Nhập mã để tìm kiếm'
 						iconLeft={<Menu size={16} />}
 						iconRight={<Search size={16} />}
+						onChange={(e) => setSearchCode(e.target.value)}
+						value={searchCode}
 					/>
 				</div>
 

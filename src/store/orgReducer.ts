@@ -9,6 +9,7 @@ export const initialOrgState: OrgState = {
 };
 
 export const orgReducer = (state: OrgState, action: OrgAction): OrgState => {
+	console.log(action);
 	switch (action.type) {
 		case 'OPEN_MODAL':
 			return { ...state, modalType: action.payload };
@@ -31,7 +32,6 @@ export const orgReducer = (state: OrgState, action: OrgAction): OrgState => {
 				),
 			};
 		case 'UPDATE_EMPLOYEE_DEPARTMENT':
-			console.log('Updating employee:', action.payload);
 			return {
 				...state,
 				employeeList: state.employeeList.map((emp) =>

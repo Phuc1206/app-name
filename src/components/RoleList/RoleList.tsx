@@ -23,7 +23,7 @@ const RoleList = () => {
 						<span
 							className={clsx(
 								styles.dot,
-								role.status ? styles.greenDot : styles.grayDot
+								role.isManager ? styles.greenDot : styles.grayDot
 							)}
 						/>
 

@@ -2,7 +2,9 @@ import styles from './DepartmentManager.module.scss';
 import { useEffect, useMemo, useState } from 'react';
 import Input from '../../ui/Input/Input';
 import Button from '../../ui/Button/Button';
-import Img from '../../../assets/img/department_nothing 1.png';
+// import Img from '../../../assets/img/department_nothing 1.png';
+import Img from '@/assets/img/department_nothing 1.png';
+
 import {
 	Search,
 	Plus,
@@ -27,7 +29,11 @@ const rowOptions = [
 	{ value: '50', label: 'số dòng hiển thị: 50' },
 ];
 let id = 3;
-const DepartmentManager = () => {
+const DepartmentManager = ({
+	searchCodeDeparment,
+}: {
+	searchCodeDeparment: string;
+}) => {
 	const {
 		modalType,
 		openModal,
@@ -44,9 +50,8 @@ const DepartmentManager = () => {
 	//filter
 	const [currentPage, setCurrentPage] = useState(1);
 	const [pageSize, setPageSize] = useState(10);
-	const [searchKeyword, setSearchKeyword] = useState('');
+	const [searchDepartment, setSearchDepartment] = useState('');
 	const [isAsc, setIsAsc] = useState(true);
-	const [sortedDepartments, setSortedDepartments] = useState<Department[]>([]);
 
 	const [searchEmployee, setSearchEmployee] = useState('');
 	const [roleName, setRoleName] = useState('');
@@ -160,33 +165,38 @@ const DepartmentManager = () => {
 		(emp) => emp.departmentId === selectedDepartment?.id
 	);
 
-	const filteredData = useMemo(() => {
-		return departments.filter((dept) =>
-			dept.name.toLowerCase().includes(searchKeyword.toLowerCase())
-		);
-	}, [departments, searchKeyword]);
-	const totalPages = Math.ceil(filteredData.length / pageSize);
+	const processedData = useMemo(() => {
+		const nameKeyword = searchDepartment.trim().toLowerCase();
+		const codeKeyword = searchCodeDeparment.trim().toLowerCase();
+
+		let result = departments.filter((dept) => {
+			const nameMatch = dept.name.toLowerCase().includes(nameKeyword);
+			const codeMatch = dept.code.toLowerCase().includes(codeKeyword);
+			return nameMatch && codeMatch;
+		});
+
+		if (isAsc) {
+			result = [...result].sort((a, b) => {
+				const nameA = a.name.toLowerCase();
+				const nameB = b.name.toLowerCase();
+				return isAsc ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+			});
+		}
+
+		return result;
+	}, [departments, searchDepartment, searchCodeDeparment, isAsc]);
+	const totalPages = Math.ceil(processedData.length / pageSize);
 	const goToFirstPage = () => setCurrentPage(1);
 	const goToPrevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
 	const goToNextPage = () =>
 		setCurrentPage((prev) => Math.min(prev + 1, totalPages));
 	const goToLastPage = () => setCurrentPage(totalPages);
 	const paginatedData = useMemo(() => {
-		const dataToUse = sortedDepartments.length
-			? sortedDepartments
-			: filteredData;
 		const start = (currentPage - 1) * pageSize;
-		return dataToUse.slice(start, start + pageSize);
-	}, [filteredData, sortedDepartments, currentPage, pageSize]);
+		return processedData.slice(start, start + pageSize);
+	}, [processedData, currentPage, pageSize]);
 	const handleSortAZ = () => {
-		const sorted = [...filteredData].sort((a, b) => {
-			const nameA = a.name.toLowerCase();
-			const nameB = b.name.toLowerCase();
-			return isAsc ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
-		});
-
-		setSortedDepartments(sorted);
-		setIsAsc(!isAsc);
+		setIsAsc((prev) => !prev);
 		setCurrentPage(1);
 	};
 	const handleCreateRole = () => {
@@ -218,7 +228,7 @@ const DepartmentManager = () => {
 							placeholder='Tìm kiếm phòng ban...'
 							iconLeft={<Search size={16} />}
 							className={styles.searchInput}
-							onChange={(e) => setSearchKeyword(e.target.value)}
+							onChange={(e) => setSearchDepartment(e.target.value)}
 						/>
 					</div>
 					<div className={styles.addbtn}>
